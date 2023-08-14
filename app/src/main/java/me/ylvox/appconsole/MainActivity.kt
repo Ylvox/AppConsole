@@ -2,8 +2,6 @@ package me.ylvox.appconsole
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -30,30 +28,15 @@ class MainActivity() : AppCompatActivity(), View.OnClickListener {
         btnProcessar.setOnClickListener(this)
         textConsole = findViewById(R.id.textConsole)
     }
-    fun somar(a: Int, b: Int): String{
-        return "${a + b}"
-    }
-
-    fun subtrair(a: Int, b: Int): String{
-        return "${a - b}"
-    }
-
-    fun dividir(a: Float, b: Float): String{
-        return "${a / b}"
-    }
-
-    fun multiplicar(a: Float, b: Float): String{
-        return "${a * b}"
-    }
 
     fun calcular(id: Int, a: String, b:String): String{
         if(id != -1){
             radioBtn = findViewById(id)
             val resposta = when(radioBtn.text.toString()) {
-                "*" -> multiplicar(a.toFloat(), b.toFloat())
-                "/" -> dividir(a.toFloat(), b.toFloat())
-                "-" -> subtrair(a.toInt(), b.toInt())
-                "+" -> somar(a.toInt(), b.toInt())
+                "*" -> (a.toFloat() * b.toFloat()).toString()
+                "/" -> (a.toFloat() / b.toFloat()).toString()
+                "-" -> (a.toFloat() - b.toFloat()).toString()
+                "+" -> (a.toFloat() + b.toFloat()).toString()
                 else -> "Invalido"
             }
             return resposta
