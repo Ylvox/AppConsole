@@ -45,21 +45,21 @@
         android:layout_width="374dp"
         android:layout_height="52dp"
         android:layout_marginStart="19dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="5dp"
         android:text="Processar"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textConsole"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt2" />
 
     <TextView
         android:id="@+id/textConsole"
-        android:layout_width="380dp"
-        android:layout_height="512dp"
+        android:layout_width="383dp"
+        android:layout_height="458dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="#000000"
@@ -71,7 +71,47 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="296dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="10dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textConsole"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProcessar" />
+        app:layout_constraintTop_toBottomOf="@+id/btnProcessar">
+
+        <RadioButton
+            android:id="@+id/radio_mu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*" />
+
+        <RadioButton
+            android:id="@+id/radio_di"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/" />
+
+        <RadioButton
+            android:id="@+id/radio_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-" />
+
+        <RadioButton
+            android:id="@+id/radio_ma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+" />
+    </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
